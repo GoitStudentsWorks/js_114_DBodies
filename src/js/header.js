@@ -44,7 +44,6 @@ document.addEventListener('DOMContentLoaded', function () {
 const menuBtn = document.querySelector('.menu-btn');
 const nav = document.querySelector('.nav');
 const navList = document.querySelector('.nav-list');
-// const navLinks = navList.querySelectorAll('a');
 
 // Відкриття/закриття меню по кліку на кнопку
 menuBtn.addEventListener('click', () => {
@@ -52,8 +51,9 @@ menuBtn.addEventListener('click', () => {
   navList.classList.toggle('is-open');
 });
 
-// Закриття меню після кліку на будь-яке посилання
-navList.forEach(a => {
+const navLinks = navList.querySelectorAll('a');
+
+navLinks.forEach(a => {
   a.addEventListener('click', () => {
     nav.classList.remove('is-open');
     navList.classList.remove('is-open');

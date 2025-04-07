@@ -57,7 +57,7 @@ body.no-scroll {
 }
 .menu-btn:focus,
 .menu-btn:hover {
-  scale: 1.05;
+  transform: scale(1.05);
 }
 .nav {
   position: relative;
@@ -90,7 +90,7 @@ body.no-scroll {
 }
 .nav-item:hover,
 .nav-item:focus {
-  scale: 1.05;
+  transform: scale(1.05);
 }
 .order-btn {
   display: flex;
@@ -216,6 +216,8 @@ body.no-scroll {
   scale: 1.05;
 }
 .mobile-menu-btn {
+  display: flex;
+  justify-content: center;
   border: none;
   background: #0041e8;
   border-radius: 60px;
