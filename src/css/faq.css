@@ -65,7 +65,7 @@
   max-height: 0;
   overflow: hidden;
   opacity: 0;
-  padding: 0 20px;
+
   transition: max-height 0.3s ease, opacity 0.3s ease;
 }
 .ac.is-active .ac-panel {
@@ -99,9 +99,6 @@
     width: 40px;
     height: 40px;
   }
-  .ac-panel {
-    padding-bottom: 24px;
-  }
 }
 
 @media only screen and (min-width: 1440px) {
@@ -126,11 +123,21 @@
   .ac-last {
     border-bottom: 1px solid rgba(250, 250, 250, 0.2);
   }
+  #ac-0,
+  #ac-2,
+  #ac-4 {
+    padding-right: 32px;
+  }
+  #ac-1,
+  #ac-3,
+  #ac-5 {
+    padding-left: 32px;
+  }
 
   .faq-list {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
+    gap: 0px;
     position: relative;
   }
 
