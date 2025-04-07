@@ -107,7 +107,7 @@ function renderError() {
 
 async function fetchData() {
   try {   
-    debugger; 
+    // debugger; 
     const response = await axios.get(
       'https://portfolio-js.b.goit.study/api/reviews'
     );
