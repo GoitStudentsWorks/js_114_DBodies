@@ -34,18 +34,6 @@ const swiper = new Swiper('.swiper', {
     onlyInViewport: false,
   },
 
-  // breakpoints: {
-  //   1440: {
-  //     slidesPerView: 6,
-  //   },
-  //   768: {
-  //     slidesPerView: 3,
-  //   },
-  //   375: {
-  //     slidesPerView: 2,
-  //   },
-  // },
-
   touchEventsTarget: 'swiper',
 
   on: {

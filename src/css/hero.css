@@ -24,7 +24,6 @@
 }
 
 .hero-title {
-  font-family: 'Inter Tight', sans-serif;
   font-weight: 500;
   font-size: 50px;
   line-height: 1;
@@ -64,14 +63,6 @@
   color: #fafafa;
 }
 
-.hero-list-item:hover {
-  border: 1px solid #fafafa;
-  box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.3),
-    0 0 20px 10px rgba(255, 255, 255, 0.2),
-    0 0 30px 15px rgba(255, 255, 255, 0.1);
-  cursor: pointer;
-}
-
 .hero-list-item.email {
   width: auto;
   max-width: 178px;
@@ -87,14 +78,6 @@
     overflow: hidden;
     text-overflow: ellipsis;
   }
-}
-
-@media (min-width: 376px) {
-  /* .email-link {
-    white-space: normal;
-    overflow: visible;
-    text-overflow: unset;
-  } */
 }
 
 @media only screen and (min-width: 768px) {
@@ -120,6 +103,11 @@
     padding: 18px 16px;
     width: 55px;
     height: 55px;
+  }
+
+  .hero-list-item:hover {
+    box-shadow: 0 0 25px rgb(0, 65, 232);
+    cursor: pointer;
   }
 
   .hero-list-item.email {

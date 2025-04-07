@@ -85,13 +85,6 @@
   transition: box-shadow 0.3s ease-in-out;
 }
 
-.aboutme-ac-trigger:hover {
-  border: 1px solid #fafafa;
-  box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.3),
-    0 0 20px 10px rgba(255, 255, 255, 0.2),
-    0 0 30px 15px rgba(255, 255, 255, 0.1);
-}
-
 .trigger-icon {
   display: block;
   stroke: #fbfbfb;
@@ -185,6 +178,11 @@
   background-color: #0041e8;
 }
 
+.with-shadow {
+  box-shadow: 0 0 50px rgb(0, 65, 232);
+  z-index: 10;
+}
+
 .swiper-button-next::after {
   display: none;
 }
@@ -205,21 +203,36 @@
   height: 28px;
 }
 
-@keyframes rotateRight {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.swiper-icon {
+  stroke: #3b3b3b;
+  transition: stroke 0.3s ease;
 }
 
 @keyframes rotateLeft {
-  from {
+  0% {
     transform: rotate(0deg);
+    box-shadow: none;
   }
-  to {
+  50% {
+    box-shadow: 0 0 30px rgb(0, 65, 232);
+  }
+  100% {
     transform: rotate(-360deg);
+    box-shadow: none;
+  }
+}
+
+@keyframes rotateRight {
+  0% {
+    transform: rotate(0deg);
+    box-shadow: none;
+  }
+  50% {
+    box-shadow: 0 0 30px rgb(0, 65, 232);
+  }
+  100% {
+    transform: rotate(360deg);
+    box-shadow: none;
   }
 }
 
@@ -258,6 +271,10 @@
     margin-bottom: 32px;
   }
 
+  .aboutme-ac-education-list:last-child {
+    width: 455px;
+  }
+
   .aboutme-ac {
     margin-bottom: 8px;
   }
@@ -266,6 +283,10 @@
     padding: 10px;
     width: 40px;
     height: 40px;
+  }
+
+  .aboutme-ac-trigger:hover {
+    box-shadow: 0 0 25px rgb(0, 65, 232);
   }
 
   .swiper {
@@ -280,6 +301,15 @@
 
   .swiper .swiper-button-next {
     width: 105px;
+  }
+
+  .swiper-button-next .swiper-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .swiper-icon:hover {
+    stroke: #0041e8;
   }
 }
 
