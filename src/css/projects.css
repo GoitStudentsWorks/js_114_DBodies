@@ -66,6 +66,10 @@
   transition: 250ms ease-in;
 }
 
+.custom-button-prev {
+  transform: rotate(-180deg);
+}
+
 .custom-button-prev.disabled,
 .custom-button-next.disabled {
   opacity: 0.5;
