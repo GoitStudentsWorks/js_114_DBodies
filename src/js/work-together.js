@@ -1,19 +1,33 @@
-const form = document.getElementById('contactForm');
-const modal = document.getElementById('modal');
-const closeModal = document.getElementById('closeModal');
+import 'modern-normalize/modern-normalize.css';
+import Accordion from 'accordion-js';
+import 'accordion-js/dist/accordion.min.css';
+import Swiper from 'swiper';
+import 'swiper/css';
 
-form.addEventListener('submit', function (e) {
+const modal = document.getElementById('thankYouModal');
+const closeBtn = document.getElementById('closeModal');
+const form = document.getElementById('contactForm');
+
+function openModal() {
+  modal.classList.add('show');
+}
+
+function closeModal() {
+  modal.classList.remove('show');
+}
+
+form.addEventListener('submit', e => {
   e.preventDefault();
-  modal.style.display = 'flex';
+  openModal();
   form.reset();
 });
 
-closeModal.addEventListener('click', function () {
-  modal.style.display = 'none';
+closeBtn.addEventListener('click', closeModal);
+
+modal.addEventListener('click', e => {
+  if (e.target === modal) closeModal();
 });
 
-window.addEventListener('click', function (e) {
-  if (e.target === modal) {
-    modal.style.display = 'none';
-  }
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') closeModal();
 });
