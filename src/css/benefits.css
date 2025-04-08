@@ -117,4 +117,9 @@ transition: 250ms ease-in;
     background-color: transparent;
 } 
 
+.benefits-container {
+display: flex;
+justify-content: space-between;
+margin-bottom: 0;
+}
 }
