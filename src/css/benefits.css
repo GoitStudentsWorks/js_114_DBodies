@@ -4,7 +4,7 @@
 }
 
 .benefits-section {
-        padding-top: 64px;
+        padding-bottom: 64px;
 }
 
 .benefits-title {
@@ -17,10 +17,11 @@ color: rgba(250, 250, 250, 0.4);
 }
 
 .benefits-list {
+    display: inline-block;
     display: flex;
     flex-direction: column;
     gap: 16px;
-    
+margin-bottom: 32px;
 }
 
 .benefits-list-items {
@@ -28,7 +29,6 @@ color: rgba(250, 250, 250, 0.4);
 }
 .benefits-list-items:last-child {
     background-color: transparent;
-    padding: 32px 0 0 0;
 } 
 
 .benefits-icon {
@@ -60,6 +60,8 @@ color: rgba(250, 250, 250, 0.6);
         letter-spacing: -0.042em;
 }
 
+
+
 @media only screen and (min-width: 375px) {
    .inItems-description {
     max-width: 290px;
@@ -90,7 +92,6 @@ transition: 250ms ease-in;
 
     .benefits-list-items:last-child {
     background-color: transparent;
-    padding: 64px 0 0 0;
 } 
 
 .benefits-order:hover {
@@ -114,7 +115,6 @@ transition: 250ms ease-in;
 
 .benefits-list-items:last-child {
     background-color: transparent;
-    padding: 64px 0 0 0;
 } 
 
 }
