@@ -1,14 +1,4 @@
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  font-family: 'Segoe UI', sans-serif;
-}
 
-body {
-  background-color: #121212;
-  color: white;
-}
 
 .footer {
   padding: 2rem 1.2rem;
@@ -80,15 +70,12 @@ body {
   font-size: 0.9rem;
   cursor: pointer;
   margin-top: 1rem;
+  transition: 250ms ease-in;
 }
 
 .send-btn:hover {
-  background: linear-gradient(
-    90deg,
-    #1c1d20 49.68%,
-    #001958 67.73%,
-    #0041e8 100%
-  );
+  box-shadow: 0 0 25px rgb(0, 47, 167) ;
+background-color: rgb(0, 47, 167);
 }
 
 .footer-contacts {
@@ -200,7 +187,7 @@ body {
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1440px) {
   .footer {
     padding: 4rem 3rem;
     background-image: linear-gradient(rgba 0, 0, 0, 0, 1)
@@ -234,7 +221,6 @@ body {
   .footer-contacts {
     grid-column: span 2;
     margin-top: 3rem;
-    justify-content: space-between;
   }
 
   .footer-header {
@@ -242,7 +228,7 @@ body {
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1440px) {
   .footer {
     padding: 60px 80px;
   }
