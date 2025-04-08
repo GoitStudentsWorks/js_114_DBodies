@@ -1,0 +1,347 @@
+.aboutme {
+  padding: 64px 0;
+}
+
+.aboutme-container {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.aboutme-preson {
+  display: flex;
+  flex-direction: column;
+}
+
+.aboutme-person-wrapper {
+  background-color: #242527;
+  padding: 32px 32px 272px;
+  border-radius: 24px;
+}
+
+.aboutme-preson-text {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 1.17;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  color: #fafafa;
+}
+
+.aboutme-span-red {
+  color: #0041e8;
+}
+
+.aboutme-span-gray {
+  color: rgba(250, 250, 250, 0.4);
+}
+
+.aboutme-pic {
+  border-radius: 24px;
+  overflow: hidden;
+}
+
+.aboutme-ac-item::after {
+  content: '';
+  display: block;
+  border: 1px solid rgba(250, 250, 250, 0.2);
+  width: 100%;
+  height: 1px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.aboutme-ac-item:last-child::after {
+  margin-bottom: 0;
+}
+
+.aboutme-ac {
+  margin-bottom: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.aboutme-ac-title {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  color: rgba(250, 250, 250, 0.4);
+}
+
+.aboutme-ac-trigger {
+  border: 1px solid rgba(250, 250, 250, 0.2);
+  border-radius: 100px;
+  padding: 9px;
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.trigger-icon {
+  display: block;
+  stroke: #fbfbfb;
+}
+
+.aboutme-ac-item.is-active .trigger-icon {
+  transform: rotate(180deg);
+}
+
+.aboutme-ac-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  overflow: hidden;
+}
+
+.aboutme-ac-text {
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: -0.02em;
+  color: #fafafa;
+}
+
+.aboutme-ac-role-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.aboutme-ac-role-item {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: -0.02em;
+  color: #fafafa;
+}
+
+.aboutme-ac-education-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.aboutme-ac-education-item {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: -0.02em;
+  color: #fafafa;
+}
+
+.swiper {
+  width: 100%;
+  overflow: hidden;
+  height: 130px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  margin-left: 0;
+}
+
+.swiper-wrapper {
+  display: flex;
+  transition: transform 0.3s ease;
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+.swiper-slide {
+  flex-shrink: 0;
+  position: relative;
+  width: 130px;
+  height: 130px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  border: 1px solid rgba(250, 250, 250, 0.2);
+  border-radius: 50%;
+  text-align: center;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: -0.02em;
+  color: #fafafa;
+}
+
+.my-active-slide {
+  background-color: #0041e8;
+}
+
+.with-shadow {
+  box-shadow: 0 0 50px rgb(0, 65, 232);
+  z-index: 10;
+}
+
+.swiper-button-next::after {
+  display: none;
+}
+
+.swiper .swiper-button-next {
+  position: absolute;
+  right: -1px;
+  top: 22px;
+  justify-content: flex-end;
+  z-index: 5;
+  width: 84px;
+  background-color: rgba(28, 29, 32, 1);
+  height: 100%;
+}
+
+.swiper-button-next .swiper-icon {
+  width: 28px;
+  height: 28px;
+}
+
+.swiper-icon {
+  stroke: #3b3b3b;
+  transition: stroke 0.3s ease;
+}
+
+@keyframes rotateLeft {
+  0% {
+    transform: rotate(0deg);
+    box-shadow: none;
+  }
+  50% {
+    box-shadow: 0 0 30px rgb(0, 65, 232);
+  }
+  100% {
+    transform: rotate(-360deg);
+    box-shadow: none;
+  }
+}
+
+@keyframes rotateRight {
+  0% {
+    transform: rotate(0deg);
+    box-shadow: none;
+  }
+  50% {
+    box-shadow: 0 0 30px rgb(0, 65, 232);
+  }
+  100% {
+    transform: rotate(360deg);
+    box-shadow: none;
+  }
+}
+
+.rotate-right {
+  animation: rotateRight 1.2s ease-in-out forwards;
+}
+
+.rotate-left {
+  animation: rotateLeft 1.2s ease-in-out forwards;
+}
+
+@media only screen and (min-width: 768px) {
+  .aboutme {
+    padding-bottom: 96px;
+  }
+
+  .aboutme-container {
+    gap: 64px;
+  }
+
+  .aboutme-preson {
+    gap: 16px;
+  }
+
+  .aboutme-person-wrapper {
+    padding: 64px 64px 436px;
+  }
+
+  .aboutme-preson-text {
+    font-size: 38px;
+    line-height: 1.05;
+  }
+
+  .aboutme-ac-item::after {
+    margin-top: 32px;
+    margin-bottom: 32px;
+  }
+
+  .aboutme-ac-education-list:last-child {
+    width: 455px;
+  }
+
+  .aboutme-ac {
+    margin-bottom: 8px;
+  }
+
+  .aboutme-ac-trigger {
+    padding: 10px;
+    width: 40px;
+    height: 40px;
+  }
+
+  .aboutme-ac-trigger:hover {
+    box-shadow: 0 0 25px rgb(0, 65, 232);
+  }
+
+  .swiper {
+    height: 200px;
+  }
+
+  .swiper-slide {
+    width: 200px;
+    height: 200px;
+    font-size: 20px;
+  }
+
+  .swiper .swiper-button-next {
+    width: 105px;
+  }
+
+  .swiper-button-next .swiper-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .swiper-icon:hover {
+    stroke: #0041e8;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .aboutme {
+    padding: 96px 0 164px;
+  }
+
+  .aboutme-container {
+    gap: 96px;
+  }
+
+  .aboutme-preson {
+    flex-direction: row;
+  }
+
+  .aboutme-preson-text {
+    width: 552px;
+    font-size: 38px;
+    line-height: 1.05;
+  }
+
+  .aboutme-ac-panel {
+    width: 612px;
+    margin-left: 696px;
+  }
+
+  .swiper {
+    width: 1312px;
+  }
+
+  .swiper .swiper-button-next {
+    width: 112px;
+  }
+}
