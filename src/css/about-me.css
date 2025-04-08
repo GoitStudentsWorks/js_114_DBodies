@@ -136,6 +136,7 @@
   color: #fafafa;
 }
 
+
 .swiper {
   width: 100%;
   overflow: hidden;
@@ -151,8 +152,7 @@
   display: flex;
   transition: transform 0.3s ease;
   position: relative;
-  height: 100%;
-  width: 100%;
+
 }
 
 .swiper-slide-card {
@@ -338,7 +338,9 @@ height: 200px;
     width: 612px;
     margin-left: 696px;
   }
-
+.swiper-slide-card {
+  max-width: 200px; 
+}
 
   .swiper .swiper-button-next {
     width: 112px;
