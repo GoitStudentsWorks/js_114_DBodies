@@ -60,7 +60,12 @@ body.no-scroll {
   transform: scale(1.05);
 }
 .nav {
-  position: relative;
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: auto;
+  max-width: 100%;
 }
 
 .nav.is-open {
@@ -98,8 +103,7 @@ body.no-scroll {
   justify-content: center;
   flex-direction: row;
   border-radius: 60px;
-  padding: 18px 24px;
-  min-width: 163px;
+  width: 163px;
   height: 55px;
   background-color: #0041e8;
   border: none;
@@ -114,6 +118,7 @@ body.no-scroll {
 .order-btn:focus {
   box-shadow: 0 0 25px #fafafa;
   transform: scale(1.05);
+  outline: none;
 }
 /* МЕНЮ */
 
@@ -123,9 +128,9 @@ body.no-scroll {
   left: 0;
   z-index: 999;
   display: flex;
-  align-items: flex-start; /* Випадає згори */
+  align-items: flex-start;
   justify-content: center;
-  background-image: url('/img/header/background-image.jpg');
+  background-image: url('/img/header/background-img@1x.jpg');
   background-size: cover;
   background-position: center center;
   background-attachment: fixed;
@@ -135,9 +140,15 @@ body.no-scroll {
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
-  transform: translateY(-100%); /* Зміна з translateX на Y */
+  transform: translateY(-100%);
   transition: opacity 1000ms cubic-bezier(0.4, 0, 0.2, 1),
     transform 1000ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+@media only screen and (max-width: 375px) and (-webkit-min-device-pixel-ratio: 2),
+  only screen and (max-width: 375px) and (min-resolution: 192dpi) {
+  .mobile-menu {
+    background-image: url('/img/header/background-img@2x.jpg');
+  }
 }
 
 .mobile-menu.is-open {
@@ -218,11 +229,12 @@ body.no-scroll {
 .mobile-menu-btn {
   display: flex;
   justify-content: center;
+  align-items: center;
   border: none;
   background: #0041e8;
   border-radius: 60px;
-  padding: 16px;
-  min-width: 164px;
+  width: 164px;
+  height: 45px;
   font-weight: 500;
   font-size: 14px;
   letter-spacing: -0.02em;
@@ -238,6 +250,7 @@ body.no-scroll {
 .mobile-menu-btn:focus {
   box-shadow: 0 0 25px #fafafa;
   transform: scale(1.05);
+  outline: none;
 }
 
 @media screen and (max-width: 767px) {
