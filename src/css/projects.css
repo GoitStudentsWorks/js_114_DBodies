@@ -172,7 +172,6 @@
   }
   .custom-navigation {
     gap: 20px;
-    margin-bottom: 96px;
   }
   .custom-button-prev,
   .custom-button-next {
@@ -197,8 +196,5 @@
   .project-img {
     padding: 36px;
     border-radius: 0 24px 24px 0;
-  }
-  .custom-navigation {
-    margin-bottom: 164px;
   }
 }
