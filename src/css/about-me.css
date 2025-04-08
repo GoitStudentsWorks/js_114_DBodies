@@ -155,7 +155,7 @@
   width: 100%;
 }
 
-.swiper-slide {
+.swiper-slide-card {
   flex-shrink: 0;
   position: relative;
   width: 130px;
@@ -293,7 +293,7 @@
     height: 200px;
   }
 
-  .swiper-slide {
+  .swiper-slide-card {
     width: 200px;
     height: 200px;
     font-size: 20px;

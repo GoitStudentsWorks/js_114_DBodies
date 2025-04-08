@@ -2,56 +2,25 @@ import axios from 'axios';
 import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
 import Swiper from 'swiper';
-import 'swiper/css';
 
-const sliderPrev = document.querySelector('.slider-nav-prev');
-const sliderNext = document.querySelector('.slider-nav-next');
-
-let data;
-
-sliderPrev.disabled = true;
-
-sliderNext.addEventListener('click', () => {
-  swiper.slideNext();
-});
-
-sliderPrev.addEventListener('click', () => {
-  swiper.slidePrev();
-});
-
-document.addEventListener('keydown', function (event) {
-  if (event.key === 'ArrowLeft') {
-    swiper.slidePrev();
-  }
-  if (event.key === 'ArrowRight') {
-    swiper.slideNext();
-  }
-});
-
-fetchData();
-
+// Инициализация swiper должна быть до использования его методов
 const swiper = new Swiper('.swiper-container', {
-  //Курсор перетягування
+  // Курсор перетягивания
   grabCursor: true,
-
   speed: 500,
-
   // Default parameters
   slidesPerView: 1,
   spaceBetween: 16,
   // Responsive breakpoints
   breakpoints: {
-    // when window width is >= 375px
     375: {
       slidesPerView: 1,
       spaceBetween: 16,
     },
-    // when window width is >= 768px
     768: {
       slidesPerView: 2,
       spaceBetween: 16,
     },
-    // when window width is >= 1440px
     1440: {
       slidesPerView: 4,
       spaceBetween: 16,
@@ -74,8 +43,52 @@ const swiper = new Swiper('.swiper-container', {
   },
 });
 
+// Получаем элементы кнопок
+const sliderPrev = document.querySelector('.slider-nav-prev');
+const sliderNext = document.querySelector('.slider-nav-next');
+
+let data;
+
+sliderPrev.disabled = true;
+
+// Обработчики для кнопок
+sliderNext.addEventListener('click', () => {
+  swiper.slideNext();
+});
+
+sliderPrev.addEventListener('click', () => {
+  swiper.slidePrev();
+});
+
+// Обработчики для стрелок
+document.addEventListener('keydown', function (event) {
+  if (event.key === 'ArrowLeft') {
+    swiper.slidePrev();
+  }
+  if (event.key === 'ArrowRight') {
+    swiper.slideNext();
+  }
+});
+
+// Функция рендеринга данных
+async function fetchData() {
+  try {
+    const response = await axios.get('https://portfolio-js.b.goit.study/api/reviews');
+    renderItems(response.data);
+  } catch (error) {
+    renderError();
+    sliderPrev.disabled = true;
+    sliderNext.disabled = true;
+    iziToast.error({
+      title: 'Error',
+      message: 'Something wrong, try again later!',
+    });
+  }
+}
+
+// Функция рендеринга элементов с отзывами
 function renderItems(data) {
-  const slider = document.querySelector('.swiper-wrapper');
+  const slider = document.querySelector('.slider-list');
   const markup = data
     .map(
       ({ author, avatar_url, review }) =>
@@ -92,35 +105,17 @@ function renderItems(data) {
   slider.insertAdjacentHTML('beforeend', markup);
 }
 
+// Функция для обработки ошибки
 function renderError() {
-  const slider = document.querySelector('.swiper-wrapper');
+  const slider = document.querySelector('.slider-list');
   const markup = `
-  
   <div class="slider-error">
     Not found!
   </div>  
-  
   `;
 
   slider.insertAdjacentHTML('beforeend', markup);
 }
 
-async function fetchData() {
-  try {   
-    // debugger; 
-    const response = await axios.get(
-      'https://portfolio-js.b.goit.study/api/reviews'
-    );
-    renderItems(response.data);    
-  } catch (error) {      
-    renderError();
-    sliderPrev.disabled = true;
-    sliderNext.disabled = true;
-    iziToast.error({
-      title: 'Error',
-      message: 'Something wrong, try again later!',
-    });
-  }
-}
-
-
+// Запуск данных
+fetchData();
