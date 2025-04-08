@@ -1,56 +1,55 @@
-// import Swiper from 'swiper';
-// import 'swiper/swiper-bundle.css';
 
-// const swiper = new Swiper('.swiper', {
-//   navigation: false, // Вимикнаємо стандартні кнопки
-//   keyboard: {
-//     enabled: true,
-//     onlyInViewport: false,
-//   },
-// });
 
-// // Кнопки навігації
-// const customButtonPrev = document.querySelector('.custom-button-prev');
-// const customButtonNext = document.querySelector('.custom-button-next');
+const swiper = new Swiper('.swiper', {
+  navigation: false, // Вимикнаємо стандартні кнопки
+  keyboard: {
+    enabled: true,
+    onlyInViewport: false,
+  },
+});
 
-// customButtonPrev.addEventListener('click', () => {
-//   swiper.slidePrev();
-// });
+// Кнопки навігації
+const customButtonPrev = document.querySelector('.custom-button-prev');
+const customButtonNext = document.querySelector('.custom-button-next');
 
-// customButtonNext.addEventListener('click', () => {
-//   swiper.slideNext();
-// });
+customButtonPrev.addEventListener('click', () => {
+  swiper.slidePrev();
+});
 
-// // Функція для оновлення стану кнопок
-// const updateButtonState = () => {
-//   customButtonPrev.disabled = swiper.isBeginning;
-//   customButtonNext.disabled = swiper.isEnd;
+customButtonNext.addEventListener('click', () => {
+  swiper.slideNext();
+});
 
-//   if (swiper.isBeginning) {
-//     customButtonPrev.classList.add('disabled');
-//   } else {
-//     customButtonPrev.classList.remove('disabled');
-//   }
+// Функція для оновлення стану кнопок
+const updateButtonState = () => {
+  customButtonPrev.disabled = swiper.isBeginning;
+  customButtonNext.disabled = swiper.isEnd;
 
-//   if (swiper.isEnd) {
-//     customButtonNext.classList.add('disabled');
-//   } else {
-//     customButtonNext.classList.remove('disabled');
-//   }
-// };
+  if (swiper.isBeginning) {
+    customButtonPrev.classList.add('disabled');
+  } else {
+    customButtonPrev.classList.remove('disabled');
+  }
 
-// // Додаємо обробку стану кнопок
-// swiper.on('reachEnd', () => {
-//   updateButtonState();
-// });
+  if (swiper.isEnd) {
+    customButtonNext.classList.add('disabled');
+  } else {
+    customButtonNext.classList.remove('disabled');
+  }
+};
 
-// swiper.on('reachBeginning', () => {
-//   updateButtonState();
-// });
+// Додаємо обробку стану кнопок
+swiper.on('reachEnd', () => {
+  updateButtonState();
+});
 
-// swiper.on('fromEdge', () => {
-//   updateButtonState();
-// });
+swiper.on('reachBeginning', () => {
+  updateButtonState();
+});
 
-// // Оновлюємо стан кнопок при ініціалізації
-// updateButtonState();
+swiper.on('fromEdge', () => {
+  updateButtonState();
+});
+
+// Оновлюємо стан кнопок при ініціалізації
+updateButtonState();

@@ -160,6 +160,7 @@
   position: relative;
   width: 130px;
   height: 130px;
+  padding: 53px 26px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -294,8 +295,9 @@
   }
 
   .swiper-slide-card {
-    width: 200px;
-    height: 200px;
+padding: 88px 52px;
+width: 200px;
+height: 200px;
     font-size: 20px;
   }
 
@@ -337,9 +339,6 @@
     margin-left: 696px;
   }
 
-  .swiper {
-    width: 1312px;
-  }
 
   .swiper .swiper-button-next {
     width: 112px;
