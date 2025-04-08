@@ -41,6 +41,11 @@
   overflow: hidden;
 }
 
+.aboutme-pic img {
+  width: 100%;
+  height: auto;
+}
+
 .aboutme-ac-item::after {
   content: '';
   display: block;
@@ -136,18 +141,19 @@
   color: #fafafa;
 }
 
-.swiper {
+.aboutme-swiper {
+  box-sizing: border-box;
   width: 100%;
   overflow: hidden;
+
   height: 130px;
   position: relative;
   display: flex;
   justify-content: center;
-  padding: 0;
-  margin-left: 0;
+  box-sizing: border-box;
 }
 
-.swiper-wrapper {
+.aboutme-swiper-wrapper {
   display: flex;
   transition: transform 0.3s ease;
   position: relative;
@@ -155,7 +161,7 @@
   width: 100%;
 }
 
-.swiper-slide {
+.aboutme-swiper-slide {
   flex-shrink: 0;
   position: relative;
   width: 130px;
@@ -174,36 +180,42 @@
   color: #fafafa;
 }
 
-.my-active-slide {
+.aboutme-active-slide {
   background-color: #0041e8;
 }
 
-.with-shadow {
+.aboutme-with-shadow {
   box-shadow: 0 0 50px rgb(0, 65, 232);
   z-index: 10;
 }
 
-.swiper-button-next::after {
+.aboutme-swiper-button-next::after {
   display: none;
 }
 
-.swiper .swiper-button-next {
+.aboutme-swiper .aboutme-swiper-button-prev {
+  display: none;
+}
+
+.aboutme-swiper .aboutme-swiper-button-next {
   position: absolute;
   right: -1px;
-  top: 22px;
-  justify-content: flex-end;
+  top: 0px;
   z-index: 5;
   width: 84px;
   background-color: rgba(28, 29, 32, 1);
   height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
 }
 
-.swiper-button-next .swiper-icon {
+.aboutme-swiper-button-next .aboutme-swiper-icon {
   width: 28px;
   height: 28px;
 }
 
-.swiper-icon {
+.aboutme-swiper-icon {
   stroke: #3b3b3b;
   transition: stroke 0.3s ease;
 }
@@ -289,26 +301,26 @@
     box-shadow: 0 0 25px rgb(0, 65, 232);
   }
 
-  .swiper {
+  .aboutme-swiper {
     height: 200px;
   }
 
-  .swiper-slide {
+  .aboutme-swiper-slide {
     width: 200px;
     height: 200px;
     font-size: 20px;
   }
 
-  .swiper .swiper-button-next {
+  .aboutme-swiper .aboutme-swiper-button-next {
     width: 105px;
   }
 
-  .swiper-button-next .swiper-icon {
+  .aboutme-swiper-button-next .aboutme-swiper-icon {
     width: 40px;
     height: 40px;
   }
 
-  .swiper-icon:hover {
+  .aboutme-swiper-icon:hover {
     stroke: #0041e8;
   }
 }
@@ -337,11 +349,28 @@
     margin-left: 696px;
   }
 
-  .swiper {
-    width: 1312px;
+  .aboutme-swiper {
+    padding: 0 32px;
   }
 
-  .swiper .swiper-button-next {
-    width: 112px;
+  .aboutme-swiper .aboutme-swiper-button-next {
+    width: 144px;
+  }
+
+  .aboutme-swiper .aboutme-swiper-button-prev {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: 10;
+    width: 32px;
+    background-color: rgba(28, 29, 32, 1);
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  .aboutme-swiper-button-next .aboutme-swiper-icon {
+    margin-right: 32px;
   }
 }
