@@ -166,6 +166,8 @@
   transition: transform 0.3s ease;
   position: relative;
 }
+
+
 .aboutme-swiper-slide {
   flex-shrink: 0;
   position: relative;
@@ -356,6 +358,7 @@
   .aboutme-swiper {
     padding: 0 32px;
   }
+  
   .aboutme-swiper .aboutme-swiper-button-next {
     width: 144px;
   }
