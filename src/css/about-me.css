@@ -137,7 +137,8 @@
 }
 
 
-.swiper {
+.aboutme-swiper {
+  box-sizing: border-box;
   width: 100%;
   overflow: hidden;
   height: 130px;
@@ -155,7 +156,7 @@
 
 }
 
-.swiper-slide-card {
+.aboutme-swiper-slide  {
   flex-shrink: 0;
   position: relative;
   width: 130px;
@@ -294,11 +295,9 @@
     height: 200px;
   }
 
-  .swiper-slide-card {
-padding: 88px 52px;
-width: 200px;
-height: 200px;
-    font-size: 20px;
+  .aboutme-swiper-slide {
+    width: 200px;
+    height: 200px;
   }
 
   .swiper .swiper-button-next {
@@ -338,9 +337,26 @@ height: 200px;
     width: 612px;
     margin-left: 696px;
   }
-.swiper-slide-card {
-  max-width: 200px; 
-}
+  .aboutme-swiper {
+    padding: 0 32px;
+  }
+
+  .aboutme-swiper .aboutme-swiper-button-next {
+    width: 144px;
+  }
+
+  .aboutme-swiper .aboutme-swiper-button-prev {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: 10;
+    width: 32px;
+    background-color: rgba(28, 29, 32, 1);
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
 
   .swiper .swiper-button-next {
     width: 112px;
