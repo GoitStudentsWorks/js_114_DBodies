@@ -347,6 +347,10 @@
     margin-left: 696px;
   }
 
+    .aboutme-swiper {
+    padding: 0 32px;
+  }
+  
   .aboutme-swiper .aboutme-swiper-button-next {
     width: 144px;
   }
