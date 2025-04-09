@@ -1,23 +1,33 @@
 <footer class="footer" id="work-together">
     <div class="footer-content container">
         <div class="footer-header">
-            <img src="./img/word-together/image.jpg" srcset="./img/word-together/image.jpg 1x,./img/word-together/image@2x.jpg 2x" alt="Avatar" class="avatar" />
-            <h2 class="footer-text"><span>LET'S</span> <strong>WORK</strong><br /><span class="togetherWork">TOGETHER</span></h2>
+            <img src="./img/word-together/image.jpg"
+                srcset="./img/word-together/image.jpg 1x,./img/word-together/image@2x.jpg 2x" alt="Avatar"
+                class="avatar" />
+            <h2 class="footer-text"><span>LET'S</span> <strong>WORK</strong><br /><span
+                    class="togetherWork">TOGETHER</span></h2>
         </div>
         <form class="footer-form" id="contactForm">
 
             <div class="imput-gorup">
-                <input type="email" class="top-input" placeholder="clients@gmail.com" required />
+                <input id="emailInput" type="email" class="top-input" placeholder="clients@gmail.com" required />
+                <span id="emailError" class="error-message"></span>
                 <input type="text" class="bottom-input" placeholder="comments" required />
+
                 <button type="submit" class="send-btn">Send</button>
             </div>
 
         </form>
-        <div class="footer-contacts">
-            <a class="cont-email" href="lloydjefferson@gmail.com">lloydjefferson@gmail.com</a>
-            <a class="cont-tel" href="">+380 11 111 11 11</a>
 
+        <div class="footer-contacts">
+            <ul class="foter-list">
+                <li class="foter-item">
+                    <a class="cont-email" href="mailto:lloydjefferson@gmail.com">lloydjefferson@gmail.com</a>
+                </li>
+                <li class="foter-item"><a class="cont-tel" href="tel:+380 11 111 11 11">+380 11 111 11 11</a></li>
+            </ul>
         </div>
+
     </div>
 
     <div class="modal" id="thankYouModal">
