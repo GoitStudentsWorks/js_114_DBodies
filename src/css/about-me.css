@@ -133,21 +133,13 @@
   gap: 10px;
 }
 
-
-
-
-
-
-
-
 .aboutme-ac-education-item {
   font-weight: 500;
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: -0.02em;
   color: #fafafa;
-}  
-
+}
 
 .aboutme-swiper {
   box-sizing: border-box;
@@ -354,25 +346,11 @@
     width: 612px;
     margin-left: 696px;
   }
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  .aboutme-swiper {
-    padding: 0 32px;
-  }
 
   .aboutme-swiper .aboutme-swiper-button-next {
     width: 144px;
   }
 
-  
-  
   .aboutme-swiper .aboutme-swiper-button-prev {
     position: absolute;
     left: 0px;
