@@ -135,8 +135,6 @@
   letter-spacing: -0.02em;
   color: #fafafa;
 }
-
-
 .aboutme-swiper {
   box-sizing: border-box;
   width: 100%;
@@ -149,14 +147,12 @@
   margin-left: 0;
 }
 
-.swiper-wrapper {
+.aboutme-swiper-wrapper {
   display: flex;
   transition: transform 0.3s ease;
   position: relative;
-
 }
-
-.aboutme-swiper-slide  {
+.aboutme-swiper-slide {
   flex-shrink: 0;
   position: relative;
   width: 130px;
@@ -340,7 +336,6 @@
   .aboutme-swiper {
     padding: 0 32px;
   }
-
   .aboutme-swiper .aboutme-swiper-button-next {
     width: 144px;
   }
