@@ -69,6 +69,7 @@
   .hero {
     background-image: url(../img/hero/Hero-tab.png),
       linear-gradient(to right, #0041e8, #1c1d20);
+      padding-top: 300px;
   }
 
   .hero-wrapper {
@@ -110,10 +111,12 @@
   .hero {
     background-image: url(../img/hero/Hero-desk.png),
       linear-gradient(to right, #0041e8, #1c1d20);
+      
   }
 
   .hero-title {
     width: 1084px;
-    margin: 0 auto 243px;
+    margin: 0 auto;
+    margin-bottom: 243px;
   }
 }

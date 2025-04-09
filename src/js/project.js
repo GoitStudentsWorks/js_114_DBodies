@@ -1,7 +1,9 @@
 import Swiper from 'swiper';
 import 'swiper/swiper-bundle.css';
+import { Navigation, Keyboard } from 'swiper/modules';
 
 const swiper = new Swiper('.swiper-project', {
+   modules: [Navigation, Keyboard],
     slidesPerView: 1,
      spaceBetween: 0,
   navigation: false, // Вимикнаємо стандартні кнопки

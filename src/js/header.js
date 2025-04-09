@@ -45,6 +45,7 @@ const menuBtn = document.querySelector('.menu-btn');
 const nav = document.querySelector('.nav');
 const navList = document.querySelector('.nav-list');
 
+
 // Відкриття/закриття меню по кліку на кнопку
 menuBtn.addEventListener('click', () => {
   nav.classList.toggle('is-open');

@@ -86,6 +86,7 @@
 @media only screen and (min-width: 768px) {
   .faq-section {
     padding-top: 96px;
+    padding-bottom: 96px;
   }
   .ac-header {
     padding-bottom: 26px;
