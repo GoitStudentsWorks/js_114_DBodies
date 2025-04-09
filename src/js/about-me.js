@@ -1,7 +1,6 @@
 import Accordion from 'accordion-js';
 import Swiper from 'swiper';
-import { Navigation } from 'swiper/modules';
-import 'swiper/css/navigation';
+import { Navigation, Keyboard } from 'swiper/modules';
 
 const ac = new Accordion('.aboutme-ac-list', {
   elementClass: 'aboutme-ac-item',
@@ -16,22 +15,24 @@ const ac = new Accordion('.aboutme-ac-list', {
 
 let previousIndex = 0;
 
-const swiper = new Swiper('.swiper', {
-  modules: [Navigation],
+const swiper = new Swiper('.aboutme-swiper', {
+  modules: [Navigation, Keyboard],
   loop: true,
   spaceBetween: 0,
   slidesPerView: 'auto',
 
   navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
+    nextEl: '.aboutme-swiper-button-next',
+    prevEl: '.aboutme-swiper-button-prev',
   },
   initialSlide: 0,
-  slideActiveClass: 'my-active-slide',
+  slideActiveClass: 'aboutme-active-slide',
+  wrapperClass: 'aboutme-swiper-wrapper',
+  slideClass: 'aboutme-swiper-slide',
 
   keyboard: {
     enabled: true,
-    onlyInViewport: false,
+    onlyInViewport: true,
   },
 
   touchEventsTarget: 'swiper',
@@ -41,7 +42,7 @@ const swiper = new Swiper('.swiper', {
       const slides = swiper.slides.length;
       const realIndex = swiper.realIndex;
 
-      document.querySelectorAll('.swiper-slide').forEach(slide => {
+      document.querySelectorAll('.aboutme-swiper-slide').forEach(slide => {
         slide.classList.remove('rotate-left', 'rotate-right');
       });
 
@@ -57,7 +58,7 @@ const swiper = new Swiper('.swiper', {
 
       previousIndex = realIndex;
 
-      const activeSlide = document.querySelector('.my-active-slide');
+      const activeSlide = document.querySelector('.aboutme-active-slide');
       if (activeSlide) {
         activeSlide.classList.add(
           direction === 'right' ? 'rotate-right' : 'rotate-left'
@@ -71,10 +72,4 @@ document.addEventListener('keydown', event => {
   swiper.slides.forEach(slide => {
     slide.setAttribute('tabindex', '0');
   });
-
-  if (event.key === 'ArrowRight') {
-    swiper.slideNext();
-  } else if (event.key === 'ArrowLeft') {
-    swiper.slidePrev();
-  }
 });

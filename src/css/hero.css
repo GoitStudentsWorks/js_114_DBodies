@@ -1,26 +1,11 @@
 .hero {
-  padding: 0;
-  margin: 0;
+  padding: 280px 0 32px;
+  margin: auto;
   background-color: #2e2f42;
   background-image: url(../img/hero/Hero-mob.png),
     linear-gradient(to right, #0041e8, #1c1d20);
   background-repeat: no-repeat;
   background-size: cover;
-}
-
-.hero-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  padding: 0;
-}
-
-.hero-wrapper {
-  display: block;
-  padding: 280px 16px 32px 16px;
-  width: 100%;
-  margin: auto;
 }
 
 .hero-title {
@@ -129,8 +114,6 @@
 
   .hero-title {
     width: 1084px;
-    margin-bottom: 243px;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto 243px;
   }
 }
