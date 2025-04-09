@@ -17,12 +17,24 @@
             <a
               href="https://github.com/DBodies/JS-Project-group03"
               target="_blank"
+              rel="noopener noreferrer"
               class="project-button"
-              >See project</a
             >
+              See project
+            </a>
           </div>
           <div class="project-img">
-            <img src="/img/projects/desktop/image.jpg" alt="Project 1" />
+            <picture>
+              <source 
+              srcset="/img/projects/desktop/image.jpg 1x, /img/projects/desktop/image@2x.jpg 2x" 
+              media="(min-width: 1440px)"
+              />
+              <source 
+              srcset="/img/projects/mobile/image.jpg 1x, /img/projects/mobile/image.mobile@2x.jpg 2x" 
+              media="(min-width: 320px)"
+              />
+              <img src="/img/projects/desktop/image.jpg" alt="Project 1" />
+            </picture>
           </div>
         </div>
       </li>
@@ -46,7 +58,17 @@
             >
           </div>
           <div class="project-img">
-            <img src="/img/projects/desktop/image1.jpg" alt="Project 2" />
+                        <picture>
+              <source 
+              srcset="/img/projects/desktop/image1.jpg 1x, /img/projects/desktop/image1@2x.jpg 2x" 
+              media="(min-width: 1440px)"
+              />
+              <source 
+              srcset="/img/projects/mobile/image.mobile1.jpg 1x, /img/projects/mobile/image.mobile1@2x.jpg 2x" 
+              media="(min-width: 320px)"
+              />
+              <img src="/img/projects/desktop/image1.jpg" alt="Project 2" />
+            </picture>
           </div>
         </div>
       </li>
@@ -70,7 +92,17 @@
             >
           </div>
           <div class="project-img">
-            <img src="/img/projects/desktop/image2.jpg" alt="Project 3" />
+              <picture>
+              <source 
+              srcset="/img/projects/desktop/image2.jpg 1x, /img/projects/desktop/image2@2x.jpg 2x" 
+              media="(min-width: 1440px)"
+              />
+              <source 
+              srcset="/img/projects/mobile/image.mobile2.jpg 1x, /img/projects/mobile/image.mobile2@2x.jpg 2x" 
+              media="(min-width: 320px)"
+              />
+              <img src="/img/projects/desktop/image2.jpg" alt="Project 3" />
+            </picture>
           </div>
         </div>
       </li>

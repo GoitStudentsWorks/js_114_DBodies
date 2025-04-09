@@ -8,16 +8,26 @@ document.addEventListener('DOMContentLoaded', function () {
   const closeButton = document.querySelector('[data-menu-close]');
   const body = document.body;
 
+  function handleMobileEsc(event) {
+    if (event.key === 'Escape') {
+      mobileMenu.classList.remove('is-open');
+      body.classList.remove('no-scroll');
+      document.removeEventListener('keydown', handleMobileEsc);
+    }
+  }
+
   // Відкриття мобільного меню
   burgerIcon.addEventListener('click', function () {
     mobileMenu.classList.add('is-open');
     body.classList.add('no-scroll');
+    document.addEventListener('keydown', handleMobileEsc);
   });
 
   // Закриття мобільного меню
   closeButton.addEventListener('click', function () {
     mobileMenu.classList.remove('is-open');
     body.classList.remove('no-scroll');
+    document.removeEventListener('keydown', handleMobileEsc);
   });
 
   // Закриття меню при кліку на посилання
@@ -26,16 +36,8 @@ document.addEventListener('DOMContentLoaded', function () {
     link.addEventListener('click', function () {
       mobileMenu.classList.remove('is-open');
       body.classList.remove('no-scroll');
+      document.removeEventListener('keydown', handleMobileEsc);
     });
-  });
-
-  // Закриття меню при натисканні клавіші ESC
-  document.addEventListener('keydown', function (event) {
-    if (event.key === 'Escape') {
-      // Якщо натиснуто Esc
-      mobileMenu.classList.remove('is-open');
-      body.classList.remove('no-scroll');
-    }
   });
 });
 
@@ -45,37 +47,48 @@ const menuBtn = document.querySelector('.menu-btn');
 const nav = document.querySelector('.nav');
 const navList = document.querySelector('.nav-list');
 
+function handleDesktopEsc(event) {
+  if (event.key === 'Escape') {
+    closeDesktopMenu();
+  }
+}
 
-// Відкриття/закриття меню по кліку на кнопку
+function openDesktopMenu() {
+  nav.classList.add('is-open');
+  navList.classList.add('is-open');
+  document.addEventListener('keydown', handleDesktopEsc);
+}
+
+function closeDesktopMenu() {
+  nav.classList.remove('is-open');
+  navList.classList.remove('is-open');
+  document.removeEventListener('keydown', handleDesktopEsc);
+}
+
+// Клик по кнопке меню
 menuBtn.addEventListener('click', () => {
-  nav.classList.toggle('is-open');
-  navList.classList.toggle('is-open');
+  const isMenuOpen = nav.classList.contains('is-open');
+  if (isMenuOpen) {
+    closeDesktopMenu();
+  } else {
+    openDesktopMenu();
+  }
 });
 
+// Клик по ссылке в меню
 const navLinks = navList.querySelectorAll('a');
-
 navLinks.forEach(a => {
   a.addEventListener('click', () => {
-    nav.classList.remove('is-open');
-    navList.classList.remove('is-open');
+    closeDesktopMenu();
   });
 });
 
-// Закриття меню при кліку поза меню
+// Клик вне меню
 document.addEventListener('click', event => {
   const isClickInsideNav = nav.contains(event.target);
   const isClickOnBtn = menuBtn.contains(event.target);
 
   if (!isClickInsideNav && !isClickOnBtn) {
-    nav.classList.remove('is-open');
-    navList.classList.remove('is-open');
-  }
-});
-
-// Закриття меню при натисканні Escape
-document.addEventListener('keydown', event => {
-  if (event.key === 'Escape') {
-    nav.classList.remove('is-open');
-    navList.classList.remove('is-open');
+    closeDesktopMenu();
   }
 });

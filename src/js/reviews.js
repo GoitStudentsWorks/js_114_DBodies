@@ -2,9 +2,19 @@ import axios from 'axios';
 import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
 import Swiper from 'swiper';
+import { Navigation, Keyboard } from 'swiper/modules';
 
 // Инициализация swiper должна быть до использования его методов
 const swiper = new Swiper('.swiper-container', {
+  modules: [Navigation, Keyboard],
+    navigation: {
+    nextEl: '.slider-arrow-prev',
+    prevEl: '.slider-arrow-next',
+  },
+      keyboard: {
+    enabled: true,
+    onlyInViewport: true,
+  },
   // Курсор перетягивания
   grabCursor: true,
   speed: 500,
@@ -61,14 +71,7 @@ sliderPrev.addEventListener('click', () => {
 });
 
 // Обработчики для стрелок
-document.addEventListener('keydown', function (event) {
-  if (event.key === 'ArrowLeft') {
-    swiper.slidePrev();
-  }
-  if (event.key === 'ArrowRight') {
-    swiper.slideNext();
-  }
-});
+
 
 // Функция рендеринга данных
 async function fetchData() {

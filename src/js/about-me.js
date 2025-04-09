@@ -68,8 +68,4 @@ const swiper = new Swiper('.aboutme-swiper', {
   },
 });
 
-document.addEventListener('keydown', event => {
-  swiper.slides.forEach(slide => {
-    slide.setAttribute('tabindex', '0');
-  });
-});
+

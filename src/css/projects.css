@@ -59,7 +59,6 @@
 .project-button {
   border-radius: 60px;
   padding: 13px 32px;
-  width: 141px;
   height: 45px;
   font-family: var(--font-family);
   font-weight: 500;
@@ -164,8 +163,11 @@
   }
   .project-button {
     padding: 18px 50px;
-    width: 177px;
+    max-width: 180px;
     height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   .project-img {
     padding: 120px 45px;
@@ -190,6 +192,7 @@
     flex-direction: row;
     align-items: stretch;
   }
+
   .project-slide-box {
     border-radius: 24px 0 0 24px;
   }

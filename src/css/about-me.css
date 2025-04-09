@@ -11,6 +11,7 @@
 .aboutme-preson {
   display: flex;
   flex-direction: column;
+  gap: 16px;
 }
 
 .aboutme-person-wrapper {
@@ -219,6 +220,7 @@
 .aboutme-swiper-icon {
   stroke: #3b3b3b;
   transition: stroke 0.3s ease;
+  cursor: pointer;
 }
 
 @keyframes rotateLeft {

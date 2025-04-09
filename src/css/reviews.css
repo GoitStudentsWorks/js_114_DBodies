@@ -58,7 +58,6 @@
   display: flex;
   justify-content: center;
   gap: 12px;
-  padding-bottom: 14px;
 }
 
 .slider-nav-prev,

@@ -22,13 +22,16 @@ color: rgba(250, 250, 250, 0.4);
     flex-direction: column;
     gap: 16px;
 margin-bottom: 32px;
+
 }
 
 .benefits-list-items {
     border-radius: 20px;
+      overflow: hidden
 }
 .benefits-list-items:last-child {
     background-color: transparent;
+    
 } 
 
 .benefits-icon {
@@ -127,7 +130,6 @@ margin-bottom: 0;
 }
 
 .benefits-section {
-    margin-bottom: 164px;
-    padding-bottom: 0;
+    padding-bottom: 164px;
 }
 }
