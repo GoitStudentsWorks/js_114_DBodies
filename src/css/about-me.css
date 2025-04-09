@@ -168,6 +168,9 @@
 }
 
 
+
+
+
 .aboutme-swiper-slide {
   flex-shrink: 0;
   position: relative;
@@ -355,14 +358,25 @@
     width: 612px;
     margin-left: 696px;
   }
+  
+  
+  
+  
+  
+  
+  
+  
+  
   .aboutme-swiper {
     padding: 0 32px;
   }
-  
+
   .aboutme-swiper .aboutme-swiper-button-next {
     width: 144px;
   }
 
+  
+  
   .aboutme-swiper .aboutme-swiper-button-prev {
     position: absolute;
     left: 0px;
