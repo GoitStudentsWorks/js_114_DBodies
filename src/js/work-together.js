@@ -8,16 +8,29 @@ document.addEventListener('DOMContentLoaded', () => {
   const modal = document.getElementById('thankYouModal');
   const closeBtn = document.getElementById('closeModal');
 
+  // 👇 Обработчик Escape
+  const handleKeydown = e => {
+    if (e.key === 'Escape' && modal.classList.contains('show')) {
+      closeModal();
+    }
+  };
+
+  // 👇 Показ/скрытие модального окна + управление keydown
   const toggleModal = show => {
     modal.classList.toggle('show', show);
     document.body.style.overflow = show ? 'hidden' : 'auto';
+
+    if (show) {
+      document.addEventListener('keydown', handleKeydown);
+    } else {
+      document.removeEventListener('keydown', handleKeydown);
+    }
   };
 
   const validateEmail = email => {
     return /^\w+(\.\w+)?@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/.test(email);
   };
 
-  // Функція для відображення статусу email (коректно або помилка)
   const displayEmailStatus = isValid => {
     emailField.style.borderBottom = isValid
       ? '1px solid #3CBC81'
@@ -50,10 +63,6 @@ document.addEventListener('DOMContentLoaded', () => {
     if (e.target === modal) closeModal();
   });
 
-  document.addEventListener('keydown', e => {
-    if (e.key === 'Escape' && modal.classList.contains('show')) closeModal();
-  });
-
   form.addEventListener('submit', async e => {
     e.preventDefault();
 
@@ -82,3 +91,4 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
+
