@@ -6,11 +6,8 @@ import { Navigation, Keyboard } from 'swiper/modules';
 
 // Инициализация swiper должна быть до использования его методов
 const swiper = new Swiper('.swiper-container', {
-  modules: [Navigation, Keyboard],
-    navigation: {
-    nextEl: '.slider-arrow-prev',
-    prevEl: '.slider-arrow-next',
-  },
+  modules: [Navigation, Keyboard],    
+  navigation: false,
       keyboard: {
     enabled: true,
     onlyInViewport: true,
