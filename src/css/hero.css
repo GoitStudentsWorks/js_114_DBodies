@@ -1,3 +1,4 @@
+
 .hero {
   padding: 280px 0 32px;
   margin: auto;
@@ -16,6 +17,7 @@
   text-transform: uppercase;
   color: #fafafa;
   margin-bottom: 212px;
+   font-family: 'Inter Tight', sans-serif;
 }
 
 .hero-list {
