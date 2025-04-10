@@ -82,6 +82,7 @@
 .slider-nav-next:disabled {
   border: 1px solid rgba(250, 250, 250, 0.2);
   box-shadow: none;
+  cursor: default;
 }
 
 .slider-nav-prev:disabled .slider-arrow-prev,
