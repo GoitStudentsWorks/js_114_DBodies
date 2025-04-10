@@ -1,21 +1,48 @@
+import axios from 'axios';
+
 document.addEventListener('DOMContentLoaded', () => {
+  const form = document.getElementById('contactForm');
+  const emailField = document.getElementById('emailInput');
+  const commentField = document.querySelector('.bottom-input');
+  const emailMessage = document.getElementById('emailError');
   const modal = document.getElementById('thankYouModal');
   const closeBtn = document.getElementById('closeModal');
-  const form = document.getElementById('contactForm');
 
-  function openModal() {
-    modal.classList.add('show');
-  }
+  const toggleModal = show => {
+    modal.classList.toggle('show', show);
+    document.body.style.overflow = show ? 'hidden' : 'auto';
+  };
 
-  function closeModal() {
-    modal.classList.remove('show');
-  }
+  const validateEmail = email => {
+    return /^\w+(\.\w+)?@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/.test(email);
+  };
 
-  form.addEventListener('submit', e => {
-    e.preventDefault();
-    openModal();
-    form.reset();
+  // Функція для відображення статусу email (коректно або помилка)
+  const displayEmailStatus = isValid => {
+    emailField.style.borderBottom = isValid
+      ? '1px solid #3CBC81'
+      : '1px solid #E74A3B';
+
+    emailMessage.textContent = isValid
+      ? 'Success!'
+      : 'Invalid email, try again';
+
+    emailMessage.classList.toggle('success', isValid);
+    emailMessage.classList.toggle('error', !isValid);
+  };
+
+  emailField.addEventListener('input', () => {
+    const isValid = validateEmail(emailField.value.trim());
+    displayEmailStatus(isValid);
   });
+
+  commentField.addEventListener('input', () => {
+    if (commentField.value.length > 300) {
+      commentField.value = commentField.value.slice(0, 300);
+    }
+  });
+
+  const closeModal = () => toggleModal(false);
 
   closeBtn.addEventListener('click', closeModal);
 
@@ -24,46 +51,34 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   document.addEventListener('keydown', e => {
-    if (e.key === 'Escape') closeModal();
+    if (e.key === 'Escape' && modal.classList.contains('show')) closeModal();
   });
 
-  const emailInput = document.getElementById('emailInput');
-  const emailError = document.getElementById('emailError');
-
-  form.addEventListener('submit', async function (e) {
+  form.addEventListener('submit', async e => {
     e.preventDefault();
 
-    // Перевіряємо чи поле валідне згідно з pattern
-    if (!emailInput.validity.valid) {
-      emailError.textContent = 'Будь ласка, введіть коректний email.';
+    const email = emailField.value.trim();
+    const comment = commentField.value.trim();
+
+    if (!validateEmail(email)) {
+      displayEmailStatus(false);
       return;
-    } else {
-      emailError.textContent = '';
     }
 
-    // Дані з форми
-    const formData = {
-      email: emailInput.value,
-    };
-
     try {
-      const response = await fetch('https://your-backend-url.com/api/send', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
-
-      if (response.ok) {
-        alert('Дякуємо! Дані надіслано.');
-        form.reset();
-      } else {
-        throw new Error('Помилка сервера');
-      }
-    } catch (error) {
-      alert('Сталася помилка при надсиланні. Спробуйте пізніше.');
-      console.error(error);
+      await axios.post(
+        'https://portfolio-js.b.goit.study/api/requests',
+        { email, comment },
+        { headers: { 'Content-Type': 'application/json' } }
+      );
+      toggleModal(true);
+      form.reset();
+      emailField.style.borderBottom = '1px solid #aaa';
+      emailMessage.textContent = '';
+      emailMessage.classList.remove('success', 'error');
+    } catch (err) {
+      alert('Error! Please check the entered data and try again.');
+      console.error('Error:', err);
     }
   });
 });
