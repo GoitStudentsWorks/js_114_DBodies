@@ -31,3 +31,10 @@ main {
 main:has(.back-link) {
   text-align: center;
 }
+@font-face {
+  font-family: 'Inter Tight';
+  src: url('../fonts/InterTight-Regular.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}

@@ -7,6 +7,7 @@
     linear-gradient(to right, #0041e8, #1c1d20);
   background-repeat: no-repeat;
   background-size: cover;
+  min-height: 50vh;
 }
 
 .hero-title {
