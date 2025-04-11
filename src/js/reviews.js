@@ -94,7 +94,7 @@ function renderItems(data) {
       ({ author, avatar_url, review }) =>
         `
            <li class="swiper-slide slider-item">
-                <img class="slider-item-img" alt="body" src="${avatar_url}">
+ <img class="slider-item-img" alt="body" src="${avatar_url}" loading="lazy">
                 <p class="slider-item-title">${author}</p>
                 <p class="slider-item-info">${review}</p>
             </li>             
