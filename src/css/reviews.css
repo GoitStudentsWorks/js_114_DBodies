@@ -14,11 +14,9 @@
 
 .container-reviews {
   overflow: hidden;
-}
-
-.slider-list {
   margin-bottom: 32px;
 }
+
 
 .slider-item.swiper-slide {
   border-radius: 20px;

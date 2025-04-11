@@ -107,11 +107,25 @@ background-size: 20% 100%;
   width: 100%;
 }
 
+
+
 .error-message {
   font-size: 14px;
   margin-top: 4px;
-  display: block;
+  display: flex;
+  position: relative;
+  bottom: -50px;
+  left: -420PX;
 }
+
+.success {
+  color: white;
+}
+
+.error {
+  color: red;
+}
+
 .imput-gorup {
   display: flex;
   flex-direction: column;
@@ -256,6 +270,10 @@ background-size:30% 100%;
     margin-bottom: 60px;
   }
 
+  .modal-content {
+    padding-top: 44px;
+  }
+
   .togetherWork {
     position: relative;
     left: -90px;
@@ -318,7 +336,7 @@ background-size:30% 100%;
     line-height: 150%;
     letter-spacing: -0.02em;
     text-align: center;
-    margin: 22px 0 16px 0;
+    margin: 0 0 16px 0;
   }
   .modal-description {
     font-weight: 500;
@@ -331,6 +349,8 @@ background-size:30% 100%;
     display: flex;
     margin: 0 auto;
   }
+
+
 }
 
 @media (min-width: 1200px) {
