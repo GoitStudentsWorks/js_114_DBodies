@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite --open",
-    "build": "vite build --base=/JS-Project-group03/",
+    "build": "vite build --base=/js_114_DBodies/",
     "preview": "vite preview"
   },
   "devDependencies": {
